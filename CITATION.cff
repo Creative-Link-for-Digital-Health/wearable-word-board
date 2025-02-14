@@ -1,0 +1,9 @@
+cff-version: 0.0.1
+message: "If you use this device, please cite it as below."
+authors:
+- family-names: "Smith"
+  given-names: "John"
+title: "Creative Link Wearable Word Board"
+version: 0.0.1
+date-released: 2024-10-21
+url: "https://github.com/Creative-Link-for-Digital-Health/wearable-word-board"
