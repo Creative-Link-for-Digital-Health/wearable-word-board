@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wearable Word Board</title>
   <style>
-    /* --- Fonts, Variables, and Layout --- */
     @font-face {
       font-family: 'Sugo Pro Display ExtraLight';
       src: url('https://creative-link-branding.s3.amazonaws.com/SugoProDisplay-ExtraLight.woff2') format('woff2');
@@ -27,9 +26,11 @@
     * { box-sizing: border-box; }
     body {
       font-family: var(--font-main);
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       background: var(--bg);
       color: #1B365D;
+      line-height: 1.6;
     }
     header {
       background: var(--primary);
@@ -42,17 +43,21 @@
       font-size: 3rem;
       margin: 0;
     }
-    .version { font-size: 1rem; margin-top: 0.25rem; color: #cce2ff; }
+    .version {
+      font-size: 1rem;
+      margin-top: 0.25rem;
+      color: #cce2ff;
+    }
     .container {
       padding: 3rem 1rem;
       max-width: 1000px;
       margin: auto;
     }
     .product-image {
-      max-width: 700px;
+      width: 30%;
       border-radius: 12px;
       display: block;
-      margin: 2rem auto;
+      margin: 0;
       box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
     h2 {
@@ -61,9 +66,19 @@
       padding-left: 0.5rem;
       margin-top: 3rem;
     }
-    .print-section { display: flex; flex-wrap: wrap; gap: 2rem; }
-    .downloads-container { flex: 2; }
-    .buttons-container { flex: 1; display: flex; flex-direction: column; }
+    .print-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .downloads-container {
+      flex: 2;
+    }
+    .buttons-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
     .card {
       padding: 1.5rem;
       border-radius: 12px;
@@ -95,8 +110,13 @@
       padding: 0.75rem;
       text-align: left;
     }
-    th { background: #daeaf6; font-weight: bold; }
-    tr:nth-child(even) td { background: #f8fafd; }
+    th {
+      background: #daeaf6;
+      font-weight: bold;
+    }
+    tr:nth-child(even) td {
+      background: #f8fafd;
+    }
     ul.download-list {
       list-style: none;
       padding-left: 0;
@@ -107,6 +127,11 @@
       padding: 0.75rem;
       margin: 0.4rem 0;
       border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s;
+    }
+    ul.download-list li:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     ul.download-list li a {
       text-decoration: none;
@@ -119,7 +144,9 @@
       left: -150px;
       transform: translateY(-50%);
     }
-    .responsive-logo { height: 100px; }
+    .responsive-logo {
+      height: 100px;
+    }
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -147,7 +174,7 @@
   </header>
 
   <div class="container fade-in">
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+    <div style="display: flex; justify-content: center; gap: 1rem;">
       <img src="https://raw.githubusercontent.com/Creative-Link-for-Digital-Health/wearable-word-board/main/assets/alphaBraceletPERSP.png" class="product-image" alt="Wearable Word Board Perspective">
       <img src="https://raw.githubusercontent.com/Creative-Link-for-Digital-Health/wearable-word-board/main/assets/alphaBraceletTOP.png" class="product-image" alt="Wearable Word Board Top View">
       <img src="https://raw.githubusercontent.com/Creative-Link-for-Digital-Health/wearable-word-board/main/assets/alphaBraceletDetail.png" class="product-image" alt="Wearable Word Board Detail View">
@@ -163,9 +190,29 @@
     <div class="print-section">
       <div class="downloads-container card">
         <h3>Downloads</h3>
-        <ul class="download-list" id="stl-list"></ul>
         <details style="margin-top: 1rem;">
-          <summary style="font-size: 0.9rem; color: gray; cursor: pointer;">Editable Files</summary>
+          <summary style="font-size: 0.9rem; color: gray; cursor: pointer;">STL Files</summary>
+          <ul class="download-list" id="stl-list">
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stl/round-bead_0-9_V7.stl">round-bead_0-9_V7.stl</a></li>
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stl/round-bead_A-M_V7.stl">round-bead_A-M_V7.stl</a></li>
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stl/round-bead_N-Z_V7.stl">round-bead_N-Z_V7.stl</a></li>
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stl/round-bead_TEST-PRINT_V7.stl">round-bead_TEST-PRINT_V7.stl</a></li>
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stl/round-bead_blank_V7.stl">round-bead_blank_V7.stl</a></li>
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stl/round-bead_blank_V7.stlbak">round-bead_blank_V7.stlbak</a></li>
+          </ul>
+        </details>
+        <details style="margin-top: 1rem;">
+          <summary style="font-size: 0.9rem; color: gray; cursor: pointer;">STP Files</summary>
+          <ul class="download-list" id="stp-list">
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stp/round-bead_0-9_V7.stp">round-bead_0-9_V7.stp</a></li>
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stp/round-bead_A-M_V7.stp">round-bead_A-M_V7.stp</a></li>
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stp/round-bead_N-Z_V7.stp">round-bead_N-Z_V7.stp</a></li>
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stp/round-bead_TEST-PRINT_V7.stp">round-bead_TEST-PRINT_V7.stp</a></li>
+            <li><a href="https://github.com/Creative-Link-for-Digital-Health/wearable-word-board/raw/main/print/stp/round-bead_blank_V7.stp">round-bead_blank_V7.stp</a></li>
+          </ul>
+        </details>
+        <details style="margin-top: 1rem;">
+          <summary style="font-size: 0.9rem; color: gray; cursor: pointer;">Other Editable Files</summary>
           <ul class="download-list" id="other-list"></ul>
         </details>
       </div>
@@ -182,62 +229,36 @@
   </footer>
 
   <script>
-    fetch('https://raw.githubusercontent.com/Creative-Link-for-Digital-Health/wearable-word-board/main/parts/BOM.csv')
-      .then(r => r.text()).then(text => {
-        const rows = text.trim().split('\n').map(row => row.split(','));
-        const table = document.createElement('table');
-        rows.forEach((row, i) => {
-          const tr = document.createElement('tr');
-          row.forEach(cell => {
-            const el = document.createElement(i === 0 ? 'th' : 'td');
-            el.textContent = cell;
-            tr.appendChild(el);
+    function createTable(containerId, csvUrl) {
+      fetch(csvUrl)
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.text();
+        })
+        .then(text => {
+          const rows = text.trim().split('\n').map(row => row.split(','));
+          const table = document.createElement('table');
+          rows.forEach((row, i) => {
+            const tr = document.createElement('tr');
+            row.forEach(cell => {
+              const el = document.createElement(i === 0 ? 'th' : 'td');
+              el.textContent = cell;
+              tr.appendChild(el);
+            });
+            table.appendChild(tr);
           });
-          table.appendChild(tr);
+          const container = document.getElementById(containerId);
+          container.innerHTML = '';
+          container.appendChild(table);
+        })
+        .catch(err => {
+          document.getElementById(containerId).textContent = 'Failed to load data.';
+          console.error(`Error loading ${csvUrl}:`, err);
         });
-        document.getElementById('bom-table').innerHTML = '';
-        document.getElementById('bom-table').appendChild(table);
-      });
+    }
 
-    fetch('https://raw.githubusercontent.com/Creative-Link-for-Digital-Health/wearable-word-board/main/parts/printer_settings.csv')
-      .then(r => r.text()).then(text => {
-        const rows = text.trim().split('\n').map(row => row.split(','));
-        const table = document.createElement('table');
-        rows.forEach((row, i) => {
-          const tr = document.createElement('tr');
-          row.forEach(cell => {
-            const el = document.createElement(i === 0 ? 'th' : 'td');
-            el.textContent = cell;
-            tr.appendChild(el);
-          });
-          table.appendChild(tr);
-        });
-        document.getElementById('settings-table').innerHTML = '';
-        document.getElementById('settings-table').appendChild(table);
-      });
-
-    fetch('https://api.github.com/repos/Creative-Link-for-Digital-Health/wearable-word-board/contents/parts')
-      .then(r => r.json()).then(files => {
-        const stlList = document.getElementById('stl-list');
-        const otherList = document.getElementById('other-list');
-        stlList.innerHTML = '';
-        otherList.innerHTML = '';
-        files.forEach(file => {
-          if (file.type === 'file') {
-            const li = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = file.download_url;
-            link.textContent = file.name;
-            link.target = '_blank';
-            li.appendChild(link);
-            if (file.name.endsWith('.stl')) {
-              stlList.appendChild(li);
-            } else {
-              otherList.appendChild(li);
-            }
-          }
-        });
-      });
+    createTable('bom-table', 'https://raw.githubusercontent.com/Creative-Link-for-Digital-Health/wearable-word-board/main/parts/BOM.csv');
+    createTable('settings-table', 'https://raw.githubusercontent.com/Creative-Link-for-Digital-Health/wearable-word-board/main/parts/printer_settings.csv');
 
     fetch('https://api.github.com/repos/Creative-Link-for-Digital-Health/wearable-word-board')
       .then(r => r.json()).then(repo => {
